@@ -23,6 +23,10 @@ class CalculatorController {
         return Calculator(0F).exec(operations).result()
     }
 
+    /**
+     * Maps between DTO and internal object representation.
+     * @param operation The DTO representation of the operations
+     */
     private fun mapOperation(operation: OperationDTO) : Operation {
         return when(operation.type){
             CalculationOperation.Add -> Add(operation.value)
