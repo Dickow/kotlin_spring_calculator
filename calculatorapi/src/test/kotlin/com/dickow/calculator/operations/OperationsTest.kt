@@ -52,4 +52,16 @@ internal class OperationsTest{
         val result = Calculator(0F).exec(operations).result()
         assertEquals(0.5F, result)
     }
+
+    @Test
+    fun test_multiply(){
+        val result = Calculator(1F).exec(Multiply(10F)).result()
+        assertEquals(10F, result)
+    }
+
+    @Test
+    fun test_multiply_by_zero(){
+        val result = Calculator(5F).exec(Multiply(0F)).result()
+        assertEquals(0F, result)
+    }
 }
